@@ -3,7 +3,7 @@ from datetime import datetime
 
 from app.database import get_connection
 from fastapi import APIRouter
-from models.Entry import Entry, EntryCreate
+from app.models.Entry import Entry, EntryCreate
 
 entries_router = APIRouter()
 

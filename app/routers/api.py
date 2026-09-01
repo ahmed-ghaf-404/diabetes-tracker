@@ -5,9 +5,12 @@ from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 
 from app.database import get_connection
+
+from app.routers.entries import entries_router
 from app.routers.summary import summary_router
 
 api_router = APIRouter()
+api_router.include_router(entries_router)
 api_router.include_router(summary_router)
 
 @api_router.get("/api/health")
