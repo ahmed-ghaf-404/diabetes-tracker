@@ -3,7 +3,7 @@ from typing import Optional
 
 
 class EntryCreate(BaseModel):
-    glucose: int = Field(..., ge=40, le=500)
+    glucose: float = Field(..., ge=1.0, le=35.0)
     meal: Optional[str] = None
     exercise_minutes: int = Field(default=0, ge=0, le=600)
     notes: Optional[str] = Field(default=None, max_length=300)
